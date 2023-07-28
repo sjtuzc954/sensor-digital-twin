@@ -22,8 +22,8 @@ public class SensorManager : RackManager
             default:
                 break;
         }
-        infostr += "示数：" + obj.GetComponent<SensorLogger>().infostr + "\n";
-        infostr += "报警：" + obj.GetComponent<SensorLogger>().alertstr + "\n";
+        SensorLogger logger = obj.GetComponent<SensorLogger>();
+        infostr += "示数：" + logger.infostr + "\n" + "报警：" + logger.alertstr + "\n";
         return infostr;
     }
 
