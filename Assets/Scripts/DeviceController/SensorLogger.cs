@@ -7,7 +7,9 @@ public class SensorLogger : MonoBehaviour
     // Start is called before the first frame update
     public string infostr;
 
-    public string alertstr;
+    public string alertstr = "";
+
+    public bool isAlert = false;
 
     void Start()
     {
@@ -28,6 +30,12 @@ public class SensorLogger : MonoBehaviour
     public void UpdateAlert(string msg)
     {
         // print(msg);
-        alertstr = msg;
+        isAlert = true;
+        alertstr += "\n" + System.DateTime.Now.ToString("G") + " " + msg;
+    }
+    public void ResetAlert()
+    {
+        isAlert = false;
+        alertstr = "";
     }
 }

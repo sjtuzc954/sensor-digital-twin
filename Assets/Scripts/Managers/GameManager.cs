@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public GameObject ManualPanel;
     public GameObject ObjectPrefab;
     public GameObject CameraPanel;
+    public GameObject AlertPanel;
     
     private GameObject infoImage;
 
@@ -131,6 +132,12 @@ public class GameManager : MonoBehaviour
             currentCamera = Camera.main;
             isCameraFree = true;
         }
+    }
+
+    public void CallAlertPanel(GameObject obj)
+    {
+        AlertPanel.GetComponent<AlertPanelController>().alertSensor = obj;
+        AlertPanel.GetComponent<AlertPanelController>().SetVisible(true);
     }
 
     public void CallCameraPanel()

@@ -17,7 +17,16 @@ public class MouseHighlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int mouseButton = -1;
         if (Input.GetMouseButtonDown(0))
+        {
+            mouseButton = 0;
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            mouseButton = 1;
+        }
+        if (mouseButton > -1)
         {
             var ray = GameManager.currentCamera.ScreenPointToRay(Input.mousePosition);//鼠标的屏幕坐标转化为一条射线
             RaycastHit hit;
@@ -32,7 +41,7 @@ public class MouseHighlight : MonoBehaviour
                     {
                         hitObj = hitObj.transform.parent.gameObject;
                     }
-                    SetObjectHighlight(hitObj);
+                    SetObjectHighlight(hitObj, mouseButton);
                 }
             }
         }
@@ -55,26 +64,33 @@ public class MouseHighlight : MonoBehaviour
         return touchedUI;
     }
 
-    public void SetObjectHighlight(GameObject obj)
+    public void SetObjectHighlight(GameObject obj, int mouseButton)
     {
-        if (obj.name.Equals("USBCamera"))
+        if (mouseButton == 0)
         {
-            gameManager.GetComponent<GameManager>().CallCameraPanel();
+            if (obj.name.Equals("USBCamera"))
+            {
+                gameManager.GetComponent<GameManager>().CallCameraPanel();
+            }
+            else if (highlightcheck == null)
+            {
+                AddComponent(obj);
+                gameManager.GetComponent<GameManager>().CallInfoPanel();
+            }
+            else if (highlightcheck == obj)
+            {
+                RemoveComponent(obj);
+                gameManager.GetComponent<GameManager>().CallInfoPanel();
+            }
+            else
+            {
+                RemoveComponent(highlightcheck);
+                AddComponent(obj);
+            }
         }
-        else if (highlightcheck == null)
+        else if (mouseButton == 1)
         {
-            AddComponent(obj);
-            gameManager.GetComponent<GameManager>().CallInfoPanel();
-        }
-        else if (highlightcheck == obj)
-        {
-            RemoveComponent(obj);
-            gameManager.GetComponent<GameManager>().CallInfoPanel();
-        }
-        else
-        {
-            RemoveComponent(highlightcheck);
-            AddComponent(obj);
+            gameManager.GetComponent<GameManager>().CallAlertPanel(obj);
         }
     }
 

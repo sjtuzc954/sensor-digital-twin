@@ -23,7 +23,16 @@ public class SensorManager : RackManager
                 break;
         }
         SensorLogger logger = obj.GetComponent<SensorLogger>();
-        infostr += "示数：" + logger.infostr + "\n" + "报警：" + logger.alertstr + "\n";
+        infostr += "示数：" + logger.infostr + "\n";
+        if (logger.isAlert)
+        {
+            infostr += "状态：异常待处理\n";
+            infostr += "报警：" + logger.alertstr + "\n";
+        }
+        else
+        {
+            infostr += "状态：正常\n";
+        }
         return infostr;
     }
 
