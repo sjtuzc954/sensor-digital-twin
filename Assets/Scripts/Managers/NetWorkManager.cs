@@ -7,6 +7,9 @@ using System.Threading;
 using System.Text;
 using System;
 using UnityEngine.UI;
+using MQTTnet;
+using System.Threading.Tasks;
+using MQTTnet.Client;
 
 public class NetWorkManager : MonoBehaviour
 {
@@ -19,6 +22,7 @@ public class NetWorkManager : MonoBehaviour
     byte[] recvData = new byte[10240]; //接收的数据，必须为字节
     int recvLen; //接收的数据长度
     Thread connectThread; //连接线程
+    bool isMqttEstablished;
 
     //初始化
     void Start()
@@ -40,6 +44,11 @@ public class NetWorkManager : MonoBehaviour
                 connectThread = new Thread(new ThreadStart(SocketReceive));
                 connectThread.Start();
             }
+            if (!isMqttEstablished)
+            {
+                isMqttEstablished = true;
+                EstablishMqtt();
+            }
         }
         else
         {
@@ -48,6 +57,62 @@ public class NetWorkManager : MonoBehaviour
                 SocketQuit();
             }
         }
+    }
+
+    async void EstablishMqtt()
+    {
+        Debug.Log("连接mqtt broker...");
+        var mqttFactory = new MqttFactory();
+        using (var mqttClient = mqttFactory.CreateMqttClient())
+        {
+            var mqttClientOptions = new MqttClientOptionsBuilder()
+                .WithTcpServer("60.204.201.196", 1883)
+                .Build();
+
+            mqttClient.ApplicationMessageReceivedAsync += e =>
+            {
+                var value = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
+                var key = e.ApplicationMessage.Topic.Split('/')[1];
+                if (value.StartsWith('!'))
+                {
+                    key += "_Alert";
+                    value = value[1..];
+                }
+                if (key.Equals("Temperature"))
+                {
+                    var v = double.Parse(value) * 0.1;
+                    value = v.ToString() + "摄氏度";
+                }
+                else if (key.Equals("Humidity"))
+                {
+                    var v = double.Parse(value) * 0.1;
+                    value = v.ToString() + "%";
+                }
+                if (GameManager.MsgDic.ContainsKey(key))
+                {
+                    GameManager.MsgDic[key] = value;
+                }
+                else
+                {
+                    GameManager.MsgDic.Add(key, value);
+                }
+                return Task.CompletedTask;
+            };
+
+            await mqttClient.ConnectAsync(mqttClientOptions, CancellationToken.None);
+
+            var mqttSubscribeOptions = mqttFactory.CreateSubscribeOptionsBuilder()
+                .WithTopicFilter(
+                    f =>
+                    {
+                        f.WithTopic("Sensor/#").WithExactlyOnceQoS();
+                    })
+                .Build();
+
+            await mqttClient.SubscribeAsync(mqttSubscribeOptions, CancellationToken.None);
+            Debug.Log("Mqtt客户端连接成功");
+        }
+
     }
 
     void SocketConnect()
