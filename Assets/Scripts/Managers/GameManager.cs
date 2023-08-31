@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public GameObject ObjectPrefab;
     public GameObject CameraPanel;
     public GameObject AlertPanel;
+    public GameObject SmartPlugPanel;
     
     private GameObject infoImage;
 
@@ -143,6 +144,11 @@ public class GameManager : MonoBehaviour
     public void CallCameraPanel()
     {
         CameraPanel.GetComponent<CameraPanelController>().SetVisible(true);
+    }
+
+    public void CallSmartPlugPanel()
+    {
+        SmartPlugPanel.GetComponent<SmartPlugController>().SetVisible(true);
     }
 
     public void CallInfoPanel()

@@ -72,6 +72,10 @@ public class MouseHighlight : MonoBehaviour
             {
                 gameManager.GetComponent<GameManager>().CallCameraPanel();
             }
+            else if (obj.name.Equals("SmartPlug"))
+            {
+                gameManager.GetComponent<GameManager>().CallSmartPlugPanel();
+            }
             else if (highlightcheck == null)
             {
                 AddComponent(obj);
