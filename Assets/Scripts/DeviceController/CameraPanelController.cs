@@ -10,7 +10,7 @@ public class CameraPanelController : MonoBehaviour
     public GameObject camaraPanel;
     public Image image;
 
-    private readonly string url = "http://localhost:8080/images/1.jpg";
+    private readonly string url = "http://60.204.201.196:5000/image";
 
     // Start is called before the first frame update
     void Start()
