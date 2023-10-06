@@ -57,7 +57,6 @@ public class SmartPlugController : MonoBehaviour
 
     public async void SendSwitchMsg(string msg)
     {
-        Debug.Log("1");
         var mqttFactory = new MqttFactory();
 
         using (var mqttClient = mqttFactory.CreateMqttClient())

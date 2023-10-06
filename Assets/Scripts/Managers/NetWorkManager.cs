@@ -71,7 +71,7 @@ public class NetWorkManager : MonoBehaviour
 
         mqttClient.ApplicationMessageReceivedAsync += e =>
         {
-            var value = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
+            var value = Encoding.UTF8.GetString(e.ApplicationMessage.PayloadSegment.ToArray());
             var key = e.ApplicationMessage.Topic.Split('/')[1];
             if (value.StartsWith('!'))
             {
@@ -205,6 +205,7 @@ public class NetWorkManager : MonoBehaviour
         }
         //最后关闭服务器
         serverSocket.Close();
+        mqttClient.DisconnectAsync();
     }
 
     void OnApplicationQuit()

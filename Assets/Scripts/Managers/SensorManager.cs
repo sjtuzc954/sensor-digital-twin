@@ -10,6 +10,8 @@ public class SensorManager : RackManager
 {
     public GameObject HumidSensor;
     public GameObject TemperatureSensor;
+    public GameObject WaterSensor;
+    public GameObject DistanceSensor;
 
     //邮箱服务器主机,根据使用的发送邮箱,使用其对应的服务器主机 例如 QQ邮箱服务器主机 smtp.qq.com
     private readonly static string host = "smtp.qq.com";
@@ -32,6 +34,12 @@ public class SensorManager : RackManager
                 break;
             case "TemperatureSensor":
                 infostr = "设备名称：温度传感器\n";
+                break;
+            case "WaterSensor":
+                infostr = "设备名称：水浸传感器\n";
+                break;
+            case "DistanceSensor":
+                infostr = "设备名称：距离传感器\n";
                 break;
             default:
                 break;
@@ -62,10 +70,12 @@ public class SensorManager : RackManager
         {
             SensorLogger logger1 = HumidSensor.GetComponent<SensorLogger>();
             SensorLogger logger2 = TemperatureSensor.GetComponent<SensorLogger>();
+            SensorLogger logger3 = WaterSensor.GetComponent<SensorLogger>();
+            SensorLogger logger4 = DistanceSensor.GetComponent<SensorLogger>();
             string body = "";
-            if (!logger1.isAlert && !logger2.isAlert)
+            if (!logger1.isAlert && !logger2.isAlert && !logger3.isAlert && !logger4.isAlert)
             {
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(60);
                 continue;
             }
             if (logger1.isAlert)
@@ -75,6 +85,14 @@ public class SensorManager : RackManager
             if (logger2.isAlert)
             {
                 body += GetInfo(TemperatureSensor);
+            }
+            if (logger3.isAlert)
+            {
+                body += GetInfo(WaterSensor);
+            }
+            if (logger4.isAlert)
+            {
+                body += GetInfo(DistanceSensor);
             }
             if (body.Length == 0)
             {
@@ -133,6 +151,24 @@ public class SensorManager : RackManager
             {
                 TemperatureSensor.GetComponent<SensorLogger>().UpdateAlert(GameManager.MsgDic["Temperature_Alert"]);
                 GameManager.MsgDic.Remove("Temperature_Alert");
+            }
+            if (GameManager.MsgDic.ContainsKey("Water"))
+            {
+                WaterSensor.GetComponent<SensorLogger>().UpdateInfo(GameManager.MsgDic["Water"]);
+            }
+            if (GameManager.MsgDic.ContainsKey("Water_Alert"))
+            {
+                WaterSensor.GetComponent<SensorLogger>().UpdateAlert(GameManager.MsgDic["Water_Alert"]);
+                GameManager.MsgDic.Remove("Water_Alert");
+            }
+            if (GameManager.MsgDic.ContainsKey("Distance"))
+            {
+                DistanceSensor.GetComponent<SensorLogger>().UpdateInfo(GameManager.MsgDic["Distance"]);
+            }
+            if (GameManager.MsgDic.ContainsKey("Distance_Alert"))
+            {
+                DistanceSensor.GetComponent<SensorLogger>().UpdateAlert(GameManager.MsgDic["Distance_Alert"]);
+                GameManager.MsgDic.Remove("Distance_Alert");
             }
         }
         catch (Exception e)
