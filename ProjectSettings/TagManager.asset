@@ -7,16 +7,17 @@ TagManager:
   - Tag
   - Vehicle
   - Object
+  - Board
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Highlightable
   - Water
   - UI
-  - Highlightable
-  - 
-  - 
+  - board
+  - ignore
+  - Object
   - 
   - 
   - 

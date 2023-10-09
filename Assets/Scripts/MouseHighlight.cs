@@ -17,16 +17,7 @@ public class MouseHighlight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int mouseButton = -1;
         if (Input.GetMouseButtonDown(0))
-        {
-            mouseButton = 0;
-        }
-        else if (Input.GetMouseButtonDown(1))
-        {
-            mouseButton = 1;
-        }
-        if (mouseButton > -1)
         {
             var ray = GameManager.currentCamera.ScreenPointToRay(Input.mousePosition);//鼠标的屏幕坐标转化为一条射线
             RaycastHit hit;
@@ -41,7 +32,42 @@ public class MouseHighlight : MonoBehaviour
                     {
                         hitObj = hitObj.transform.parent.gameObject;
                     }
-                    SetObjectHighlight(hitObj, mouseButton);
+                    SetObjectHighlight(hitObj, 0);
+                }
+            }
+        }
+
+	    if (Input.GetMouseButtonDown(1))
+        {
+            var ray = GameManager.currentCamera.ScreenPointToRay(Input.mousePosition);//鼠标的屏幕坐标转化为一条射线
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 1000f, 1 << (LayerMask.NameToLayer("Object"))))
+            {
+             	var hitObj = hit.collider.gameObject;
+
+                while (hitObj.transform.parent != null)
+                {
+                        hitObj = hitObj.transform.parent.gameObject;
+                }
+                Destroy(hitObj);
+            }
+            else if (Physics.Raycast(ray, out hit, 1000f, 1 << (LayerMask.NameToLayer("Highlightable"))))
+            {
+                if (!IsTouchedUI())
+                {
+                    var hitObj = hit.collider.gameObject;
+
+                    while (hitObj.transform.parent != null)
+                    {
+                        hitObj = hitObj.transform.parent.gameObject;
+                    }
+                    List<string> reserved = new List<string>() { "HumidSensor", "TemperatureSensor", "WaterSensor", "DistanceSensor" };
+                    if (reserved.Exists(s => s.Equals(hitObj.name)))
+                    {
+                        Debug.Log(hitObj.name);
+                        SetObjectHighlight(hitObj, 1);
+                    }
                 }
             }
         }

@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class VehicleController : MonoBehaviour
 {
+
+public Vector3[] positions;
     public bool isBlock = false;
+private bool destroy = false;
+private bool OK = false;
+private float timer = 0;
+private float delay = 5;
+static int cnt = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +21,26 @@ public class VehicleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!OK && destroy) {
+		timer += Time.deltaTime;
+		if (timer >= delay) {
+// Debug.Log("1");
+			// Destroy(this.gameObject);
+if (cnt == 5) {
+OK = true; return;}
+this.gameObject.transform.position = positions[cnt];
+this.gameObject.layer = LayerMask.NameToLayer("ignore");
+cnt++;
+OK = true;
+		}
+	}
+    }
+
+private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Board")
+        {
+            destroy =  true;
+        }
     }
 }

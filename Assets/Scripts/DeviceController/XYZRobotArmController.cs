@@ -263,7 +263,7 @@ public void GrabOver(object source, System.Timers.ElapsedEventArgs e)
                 this.transform.position.y <= targety + positionoffset && this.transform.position.y >= targety - positionoffset &&
                 this.transform.position.z <= targetz + positionoffset && this.transform.position.z >= targetz - positionoffset);
     }
-
+private float timer = 0;
     private void GotoGrab()
     {
         if (grabingSequential == 0)
@@ -286,7 +286,9 @@ public void GrabOver(object source, System.Timers.ElapsedEventArgs e)
         {
             if (isRotating) return;
             isGrabing = true;
-            if (isReallyGrabingLeft && isReallyGrabingRight) {
+timer += Time.deltaTime;
+            if ((isReallyGrabingLeft && isReallyGrabingRight) || (timer > 1.5)) {
+timer = 0;
 	t.Start();
 	grabingSequential = -1;
             }

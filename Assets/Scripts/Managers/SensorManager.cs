@@ -173,7 +173,7 @@ public class SensorManager : RackManager
         }
         catch (Exception e)
         {
-            
+
         }
     }
 

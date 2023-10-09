@@ -29,6 +29,7 @@ public class NetWorkManager : MonoBehaviour
     void Start()
     {
         //定义服务器的IP和端口，端口与服务器对应
+	    // ipEnd = new IPEndPoint(IPAddress.Parse("192.168.3.20"), 15000);
         ipEnd = new IPEndPoint(IPAddress.Any, 9999); //服务器端口号
         serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
     }
@@ -58,6 +59,19 @@ public class NetWorkManager : MonoBehaviour
                 SocketQuit();
             }
         }
+    }
+
+    void SocketConnect()
+    {
+        if (clientSocket != null)
+            clientSocket.Close();
+        Debug.Log("等待客户端连接...");
+        //定义套接字类型,必须在子线程中定义
+        clientSocket = serverSocket.Accept();
+        //获取客户端的IP和端口
+        IPEndPoint ipEndClient = (IPEndPoint)clientSocket.RemoteEndPoint;
+        //输出客户端的IP和端口
+        print("Connect with " + ipEndClient.Address.ToString() + ":" + ipEndClient.Port.ToString());
     }
 
     async void EstablishMqtt()
@@ -112,19 +126,6 @@ public class NetWorkManager : MonoBehaviour
 
         await mqttClient.SubscribeAsync(mqttSubscribeOptions, CancellationToken.None);
         Debug.Log("Mqtt客户端连接成功");
-    }
-
-    void SocketConnect()
-    {
-        if (clientSocket != null)
-            clientSocket.Close();
-        Debug.Log("等待客户端连接...");
-        //定义套接字类型,必须在子线程中定义
-        clientSocket = serverSocket.Accept();
-        //获取客户端的IP和端口
-        IPEndPoint ipEndClient = (IPEndPoint)clientSocket.RemoteEndPoint;
-        //输出客户端的IP和端口
-        print("Connect with " + ipEndClient.Address.ToString() + ":" + ipEndClient.Port.ToString());
     }
 
     void SocketSend(string msg)

@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: 0.38980004}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 1
@@ -52,6 +53,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -124,6 +126,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: 0.3012}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 3
@@ -147,6 +150,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -219,6 +223,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: 0.05}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 9
@@ -242,6 +247,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -314,6 +320,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: -0.288}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 17
@@ -337,6 +344,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -409,6 +417,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: -0.37}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 19
@@ -432,6 +441,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -504,6 +514,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: -0.038}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 11
@@ -527,6 +538,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -599,6 +611,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: -0.16350004}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 14
@@ -622,6 +635,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -694,6 +708,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: -0.45320004}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 21
@@ -717,6 +732,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -789,6 +805,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: -0.2048}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 15
@@ -812,6 +829,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -884,6 +902,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: 0.007700001}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 10
@@ -907,6 +926,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -979,6 +999,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: -0.33029997}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 18
@@ -1002,6 +1023,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1074,6 +1096,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: 0.17570007}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 6
@@ -1097,6 +1120,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1169,6 +1193,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: 0.4307}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 0
@@ -1192,6 +1217,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1264,6 +1290,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.005, y: 0.59, z: 0.00832}
   m_LocalScale: {x: 0.5942, y: 0.0399, z: 0.91202676}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2074640959307797879}
   m_Father: {fileID: 2074640959649668290}
@@ -1288,6 +1315,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1360,6 +1388,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: 0.3475}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 2
@@ -1383,6 +1412,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1455,6 +1485,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: 0.090899974}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 8
@@ -1478,6 +1509,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1550,6 +1582,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: -0.080300055}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 12
@@ -1573,6 +1606,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1645,6 +1679,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: -0.24710001}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 16
@@ -1668,6 +1703,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1737,6 +1773,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2074640959073220497}
   - {fileID: 2074640957825374237}
@@ -1790,6 +1827,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.00094153394, y: 0.61792994, z: 0.43970862}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959649668290}
   m_RootOrder: 0
@@ -1823,6 +1861,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: -0.12120001}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 13
@@ -1846,6 +1885,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1918,6 +1958,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: 0.21800007}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 5
@@ -1941,6 +1982,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2013,6 +2055,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: -0.41230008}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 20
@@ -2036,6 +2079,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2108,6 +2152,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: 0.13319999}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 7
@@ -2131,6 +2176,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2203,6 +2249,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.8652048, y: 1, z: 31.2762}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2074640959376045829}
   - {fileID: 2074640959088372509}
@@ -2228,6 +2275,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2300,6 +2348,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009999215, y: 0.69999903, z: 0.2589001}
   m_LocalScale: {x: 0.67017883, y: 1, z: 0.016376875}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2074640959307797879}
   m_RootOrder: 4
@@ -2323,6 +2372,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

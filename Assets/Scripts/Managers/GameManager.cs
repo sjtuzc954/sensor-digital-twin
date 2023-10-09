@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public GameObject CameraPanel;
     public GameObject AlertPanel;
     public GameObject SmartPlugPanel;
-    
+
     private GameObject infoImage;
 
     // Start is called before the first frame update
@@ -135,22 +135,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CallAlertPanel(GameObject obj)
-    {
-        AlertPanel.GetComponent<AlertPanelController>().alertSensor = obj;
-        AlertPanel.GetComponent<AlertPanelController>().SetVisible(true);
-    }
-
-    public void CallCameraPanel()
-    {
-        CameraPanel.GetComponent<CameraPanelController>().SetVisible(true);
-    }
-
-    public void CallSmartPlugPanel()
-    {
-        SmartPlugPanel.GetComponent<SmartPlugController>().SetVisible(true);
-    }
-
     public void CallInfoPanel()
     {
         InfoPanel.GetComponent<SidebarPanelController>().PanelMove();
@@ -179,5 +163,21 @@ public class GameManager : MonoBehaviour
             Destroy(infoImage);
             infoImage = null;
         }
+    }
+
+    public void CallAlertPanel(GameObject obj)
+    {
+        AlertPanel.GetComponent<AlertPanelController>().alertSensor = obj;
+        AlertPanel.GetComponent<AlertPanelController>().SetVisible(true);
+    }
+
+    public void CallCameraPanel()
+    {
+        CameraPanel.GetComponent<CameraPanelController>().SetVisible(true);
+    }
+
+    public void CallSmartPlugPanel()
+    {
+        SmartPlugPanel.GetComponent<SmartPlugController>().SetVisible(true);
     }
 }

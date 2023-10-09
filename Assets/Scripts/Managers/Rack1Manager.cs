@@ -73,6 +73,7 @@ public class Rack1Manager : RackManager
     {
         Rack1_RobotArmState1 = 1;
         RobotArm1.GetComponent<XYZRobotArmController>().StartGrab();
+GameObject.Find("GameManager").GetComponent<GameManager>().Generate();
     }
 
     public void RobotArm1StartPut()

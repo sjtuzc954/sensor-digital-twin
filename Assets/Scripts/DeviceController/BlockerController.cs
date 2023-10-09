@@ -9,6 +9,10 @@ public class BlockerController : MonoBehaviour
     public Transform bottom;
     public bool auto = false;
 
+    public GameObject NextBlocker1;
+    public GameObject NextBlocker2;
+    
+    private bool isBlocking = false;
     private float height;
     private bool autoStart = false;
     private bool block = true;
@@ -27,22 +31,38 @@ public class BlockerController : MonoBehaviour
         
     }
 
+    public bool GetBlockingState() {
+	return isBlocking;
+    }
+
     public void AutoDown(object source, System.Timers.ElapsedEventArgs e)
-    {
+    {//Debug.Log(2);
         block = false;
         t2.Start();
     }
     public void AutoUp(object source, System.Timers.ElapsedEventArgs e)
-    {
+    {//Debug.Log(3);
         block = true;
         autoStart = false;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+	if (auto) CheckState();
         if (auto && block) Up();
         else if (auto && !block) Down();
+    }
+
+    void CheckState() {
+
+	if (NextBlocker1.GetComponent<BlockerController>().GetBlockingState() || NextBlocker2.GetComponent<BlockerController>().GetBlockingState()) {
+return;}
+	if (auto && isBlocking && !autoStart) {
+//Debug.Log(1);
+	autoStart = true;
+	t.Start();
+            }
     }
 
     public void Up()
@@ -68,10 +88,7 @@ public class BlockerController : MonoBehaviour
         if (collision.gameObject.tag == "Vehicle")
         {
             collision.gameObject.GetComponent<VehicleController>().isBlock = true;
-            if (auto && !autoStart) {
-	autoStart = true;
-	t.Start();
-            }
+	    isBlocking = true;
         }
     }
 
@@ -80,6 +97,7 @@ public class BlockerController : MonoBehaviour
         if (collision.gameObject.tag == "Vehicle")
         {
             collision.gameObject.GetComponent<VehicleController>().isBlock = false;
+	    isBlocking = false;
         }
     }
 }

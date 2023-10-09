@@ -13,13 +13,13 @@ public class SensorLogger : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void UpdateInfo(string msg)

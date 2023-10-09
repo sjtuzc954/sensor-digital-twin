@@ -77,7 +77,7 @@ public class Rack2Manager : RackManager
 
     // ×èµ²Æø¸×¿ØÖÆ
     public void SetBlocker0()
-    {Debug.Log("??");
+    {
         Rack2_Blocker0 = !Rack2_Blocker0;
     }
 
@@ -103,7 +103,7 @@ public class Rack2Manager : RackManager
 
     private void BlockerControl()
     {
-        /*if (Rack2_Blocker0)
+        if (Rack2_Blocker0)
         {
             Blocker0.GetComponentInChildren<BlockerController>().Down();
         }
@@ -118,7 +118,7 @@ public class Rack2Manager : RackManager
         else
         {
             Blocker1.GetComponentInChildren<BlockerController>().Up();
-        }*/
+        }
         if (Rack2_Blocker2)
         {
             Blocker2.GetComponentInChildren<BlockerController>().Down();
@@ -254,12 +254,27 @@ public class Rack2Manager : RackManager
         Rack2_SuckerState1 = Sucker1.GetComponent<XYZSuckerController>().CheckState();
         Rack2_SuckerState2 = Sucker2.GetComponent<XYZSuckerController>().CheckState();
     }
-
+// private float timer = 0;
+// private float delay = 1;
     void Rack2UpdateInfo()
     {
         try
         {/*if (GameManager.MsgDic.ContainsKey("stickHome1")) Rack2_Blocker1 = !Convert.ToBoolean(int.Parse(GameManager.MsgDic["stickHome1"]));*/
-            if (GameManager.MsgDic.ContainsKey("RACK2_X_UPTIGHTCYLINDERHOME_01") && flag) Rack2_Blocker2 = Convert.ToBoolean(int.Parse(GameManager.MsgDic["RACK2_X_UPTIGHTCYLINDERHOME_01"]));
+            /*if (GameManager.MsgDic.ContainsKey("RACK2_X_UPTIGHTCYLINDERHOME_01") && flag) {
+Rack2_Blocker2 = Convert.ToBoolean(int.Parse(GameManager.MsgDic["RACK2_X_UPTIGHTCYLINDERHOME_01"]));
+if (flag && int.Parse(GameManager.MsgDic["RACK2_X_UPTIGHTCYLINDERHOME_01"]) == 1) {
+	timer += Time.deltaTime;
+	if (timer >= delay) {
+		flag = false;
+		Rack2_Blocker2 = false;
+		timer = 0;
+	}
+}
+}*/
+	if (GameManager.MsgDic.ContainsKey("Q_HOMESTATIONSIGNAL")) {Rack2_Blocker0 = Convert.ToBoolean(int.Parse(GameManager.MsgDic["Q_HOMESTATIONSIGNAL"]));
+}
+	if (GameManager.MsgDic.ContainsKey("RACK2_X_CACHEBLOCKCYLINDERHOME_01")) Rack2_Blocker1 = !Convert.ToBoolean(int.Parse(GameManager.MsgDic["RACK2_X_CACHEBLOCKCYLINDERHOME_01"]));
+	if (GameManager.MsgDic.ContainsKey("RACK2_X_TIGHTBLOCKCYLINDERHOME_01")) Rack2_Blocker2 = !Convert.ToBoolean(int.Parse(GameManager.MsgDic["RACK2_X_TIGHTBLOCKCYLINDERHOME_01"]));
             /*if (GameManager.MsgDic.ContainsKey("stickHome3")) Rack2_Blocker3 = !Convert.ToBoolean(int.Parse(GameManager.MsgDic["stickHome3"]));
             if (GameManager.MsgDic.ContainsKey("stickHome4")) Rack2_Blocker4 = !Convert.ToBoolean(int.Parse(GameManager.MsgDic["stickHome4"]));*/
 

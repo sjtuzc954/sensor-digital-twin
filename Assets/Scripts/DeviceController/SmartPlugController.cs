@@ -64,7 +64,7 @@ public class SmartPlugController : MonoBehaviour
             var mqttClientOptions = new MqttClientOptionsBuilder()
                 .WithTcpServer("60.204.201.196", 1883)
                 .Build();
-            
+
             await mqttClient.ConnectAsync(mqttClientOptions, CancellationToken.None);
 
             var applicationMessage = new MqttApplicationMessageBuilder()

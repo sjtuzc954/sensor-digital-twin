@@ -23,7 +23,7 @@ public class CameraPanelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void SetVisible(bool visible)
