@@ -206,7 +206,7 @@ public class NetWorkManager : MonoBehaviour
         }
         //最后关闭服务器
         serverSocket.Close();
-        mqttClient.DisconnectAsync();
+        mqttClient?.DisconnectAsync();
     }
 
     void OnApplicationQuit()
