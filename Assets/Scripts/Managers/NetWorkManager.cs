@@ -92,7 +92,7 @@ public class NetWorkManager : MonoBehaviour
                 key += "_Alert";
                 value = value[1..];
             }
-            if (key.Equals("Temperature"))
+            if (key.EndsWith("Temperature"))
             {
                 var v = double.Parse(value) * 0.1;
                 value = v.ToString() + "…„ œ∂»";

@@ -9,7 +9,10 @@ using System.Net;
 public class SensorManager : RackManager
 {
     public GameObject HumidSensor;
-    public GameObject TemperatureSensor;
+    public GameObject MachineTemperatureSensor;
+    public GameObject VesselTemperatureSensor;
+    public GameObject ChassisTemperatureSensor;
+    public GameObject CompressorTemperatureSensor;
     public GameObject WaterSensor;
     public GameObject DistanceSensor;
 
@@ -32,8 +35,17 @@ public class SensorManager : RackManager
             case "HumidSensor":
                 infostr = "设备名称：湿度传感器\n";
                 break;
-            case "TemperatureSensor":
-                infostr = "设备名称：温度传感器\n";
+            case "MachineTemperatureSensor":
+                infostr = "设备名称：温度传感器(机台)\n";
+                break;
+            case "VesselTemperatureSensor":
+                infostr = "设备名称：温度传感器(气罐)\n";
+                break;
+            case "ChassisTemperatureSensor":
+                infostr = "设备名称：温度传感器(主机)\n";
+                break;
+            case "CompressorTemperatureSensor":
+                infostr = "设备名称：温度传感器(压缩机)\n";
                 break;
             case "WaterSensor":
                 infostr = "设备名称：水浸传感器\n";
@@ -69,9 +81,12 @@ public class SensorManager : RackManager
         while (true)
         {
             SensorLogger logger1 = HumidSensor.GetComponent<SensorLogger>();
-            SensorLogger logger2 = TemperatureSensor.GetComponent<SensorLogger>();
+            SensorLogger logger2 = MachineTemperatureSensor.GetComponent<SensorLogger>();
             SensorLogger logger3 = WaterSensor.GetComponent<SensorLogger>();
             SensorLogger logger4 = DistanceSensor.GetComponent<SensorLogger>();
+            SensorLogger logger5 = VesselTemperatureSensor.GetComponent<SensorLogger>();
+            SensorLogger logger6 = ChassisTemperatureSensor.GetComponent<SensorLogger>();
+            SensorLogger logger7 = CompressorTemperatureSensor.GetComponent<SensorLogger>();
             string body = "";
             if (!logger1.isAlert && !logger2.isAlert && !logger3.isAlert && !logger4.isAlert)
             {
@@ -84,7 +99,7 @@ public class SensorManager : RackManager
             }
             if (logger2.isAlert)
             {
-                body += GetInfo(TemperatureSensor);
+                body += GetInfo(MachineTemperatureSensor);
             }
             if (logger3.isAlert)
             {
@@ -93,6 +108,18 @@ public class SensorManager : RackManager
             if (logger4.isAlert)
             {
                 body += GetInfo(DistanceSensor);
+            }
+            if (logger5.isAlert)
+            {
+                body += GetInfo(VesselTemperatureSensor);
+            }
+            if (logger6.isAlert)
+            {
+                body += GetInfo(ChassisTemperatureSensor);
+            }
+            if (logger7.isAlert)
+            {
+                body += GetInfo(CompressorTemperatureSensor);
             }
             if (body.Length == 0)
             {
@@ -143,14 +170,41 @@ public class SensorManager : RackManager
                 HumidSensor.GetComponent<SensorLogger>().UpdateAlert(GameManager.MsgDic["Humidity_Alert"]);
                 GameManager.MsgDic.Remove("Humidity_Alert");
             }
-            if (GameManager.MsgDic.ContainsKey("Temperature"))
+            if (GameManager.MsgDic.ContainsKey("MachineTemperature"))
             {
-                TemperatureSensor.GetComponent<SensorLogger>().UpdateInfo(GameManager.MsgDic["Temperature"]);
+                MachineTemperatureSensor.GetComponent<SensorLogger>().UpdateInfo(GameManager.MsgDic["MachineTemperature"]);
             }
-            if (GameManager.MsgDic.ContainsKey("Temperature_Alert"))
+            if (GameManager.MsgDic.ContainsKey("MachineTemperature_Alert"))
             {
-                TemperatureSensor.GetComponent<SensorLogger>().UpdateAlert(GameManager.MsgDic["Temperature_Alert"]);
-                GameManager.MsgDic.Remove("Temperature_Alert");
+                MachineTemperatureSensor.GetComponent<SensorLogger>().UpdateAlert(GameManager.MsgDic["MachineTemperature_Alert"]);
+                GameManager.MsgDic.Remove("MachineTemperature_Alert");
+            }
+            if (GameManager.MsgDic.ContainsKey("VesselTemperature"))
+            {
+                VesselTemperatureSensor.GetComponent<SensorLogger>().UpdateInfo(GameManager.MsgDic["VesselTemperature"]);
+            }
+            if (GameManager.MsgDic.ContainsKey("VesselTemperature_Alert"))
+            {
+                VesselTemperatureSensor.GetComponent<SensorLogger>().UpdateAlert(GameManager.MsgDic["VesselTemperature_Alert"]);
+                GameManager.MsgDic.Remove("VesselTemperature_Alert");
+            }
+            if (GameManager.MsgDic.ContainsKey("ChassisTemperature"))
+            {
+                ChassisTemperatureSensor.GetComponent<SensorLogger>().UpdateInfo(GameManager.MsgDic["ChassisTemperature"]);
+            }
+            if (GameManager.MsgDic.ContainsKey("ChassisTemperature_Alert"))
+            {
+                ChassisTemperatureSensor.GetComponent<SensorLogger>().UpdateAlert(GameManager.MsgDic["ChassisTemperature_Alert"]);
+                GameManager.MsgDic.Remove("ChassisTemperature_Alert");
+            }
+            if (GameManager.MsgDic.ContainsKey("CompressorTemperature"))
+            {
+                CompressorTemperatureSensor.GetComponent<SensorLogger>().UpdateInfo(GameManager.MsgDic["CompressorTemperature"]);
+            }
+            if (GameManager.MsgDic.ContainsKey("CompressorTemperature_Alert"))
+            {
+                MachineTemperatureSensor.GetComponent<SensorLogger>().UpdateAlert(GameManager.MsgDic["CompressorTemperature_Alert"]);
+                GameManager.MsgDic.Remove("CompressorTemperature_Alert");
             }
             if (GameManager.MsgDic.ContainsKey("Water"))
             {
